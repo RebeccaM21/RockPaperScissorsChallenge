@@ -5,8 +5,8 @@ export class Player {
       this.name = name; 
   }
  
-    score(amount){
-        this.score += amount;
+    increaseScore(){
+        this.score++; 
         return this.score; 
   }
     

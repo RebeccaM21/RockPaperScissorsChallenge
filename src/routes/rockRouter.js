@@ -4,11 +4,14 @@ export const router = express.Router();
 
 router.post('/', (req, res) => {
     const versus = req.app.locals.versus
-    if (versus.turn() == 'scissors') { 
-        firstPlayer.score(1); 
-    } else if (versus.turn() == 'paper') { 
-        secondPlayer.score(1)
-    } 
+    const firstPlayer = versus.firstPlayer(); 
+    const secondPlayer = versus.secondPlayer(); 
+  versus.turn(); 
+  if (secondPlayer.choice() === 'scissors') {
+    firstPlayer.increaseScore();
+  } else if (secondPlayer.choice() == 'paper') {
+    secondPlayer.increaseScore();
+  }
 
     res.redirect('/rock'); 
 })

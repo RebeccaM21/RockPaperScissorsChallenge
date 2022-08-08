@@ -4,15 +4,17 @@ export const router = express.Router();
 
 router.post('/', (req, res) => {
     const versus = req.app.locals.versus
-    if (versus.turn() == 'paper') { 
-        firstPlayer.score(1); 
-    } else if (versus.turn() == 'rock') { 
-        secondPlayer.score(1)
-    } 
+    const firstPlayer = versus.firstPlayer(); 
+    const secondPlayer = versus.secondPlayer(); 
+  versus.turn(); 
+  if (secondPlayer.choice() === 'paper') {
+    firstPlayer.increaseScore();
+  } else if (secondPlayer.choice() == 'rock') {
+    secondPlayer.increaseScore();
+  }
 
     res.redirect('/scissors'); 
 })
-
     router.get('/', (req, res) => {
     const firstPlayer = req.app.locals.versus.firstPlayer();
     const secondPlayer = req.app.locals.versus.secondPlayer();
