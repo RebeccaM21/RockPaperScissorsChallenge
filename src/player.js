@@ -3,7 +3,7 @@ export class Player {
 
   constructor(name) {
       this.name = name;
-      this.score = score; 
+    //   this.score = score; 
   }
 
   score(amount) {
@@ -24,4 +24,4 @@ export class Player {
                 break; 
         }
   }
-};
+}; 

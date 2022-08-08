@@ -1,15 +1,20 @@
 import express from 'express'; 
-import Versus from '../versus.js'; 
 
 export const router = express.Router();
 
 router.post('/', (req, res) => {
-    const firstPlayer = Versus.firstPlayer();
-    const secondPlayer = Versus.secondPlayer();
-    Versus.turn();    
-    Versus.switch();
+    const versus = req.app.locals.versus
+    versus.turn();
+    versus.switchPlayer();
 
-  res.render('challenge', {
+    res.redirect('/scissors'); 
+})
+
+    router.get('/', (req, res) => {
+    const firstPlayer = req.app.locals.versus.firstPlayer();
+    const secondPlayer = req.app.locals.versus.secondPlayer();
+    
+    res.render('scissors', {
     firstPlayer: firstPlayer,
     secondPlayer: secondPlayer
   });

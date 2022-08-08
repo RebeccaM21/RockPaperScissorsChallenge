@@ -3,18 +3,17 @@ import Versus from '../versus.js';
 
 export const router = express.Router();
 
-
 router.post('/', (req, res) => {
     const versus = new Versus(); 
-    const names = [req.body.player1, req.body.player2];
-    versus.setup(names); 
-    req.app.locals.Versus = Versus;
+    const names = [req.body.firstPlayer, req.body.secondPlayer];
+    versus.setup(names);
+    req.app.locals.versus = versus;
 
     res.redirect('/challenge')
 })
 
 router.get('/', (req, res) => {
-    const player = req.app.locals.Versus.firstPlayer();
+    const player = req.app.locals.versus.firstPlayer()
     
     res.render('challenge', {
         name: player.name,

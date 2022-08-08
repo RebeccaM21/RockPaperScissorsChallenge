@@ -8,7 +8,7 @@ import { router as rockRouter } from './routes/rockRouter.js';
 import { router as scissorsRouter } from './routes/scissorsRouter.js';
 
 dotenv.config({
-    path: '.env.${process.env.NODE_ENV}'
+    path: `.env.${process.env.NODE_ENV}`
 });
 
 const app = express();
@@ -17,6 +17,8 @@ const port = process.env.PORT;
 const host = process.env.HOST;
 
 app.set('view engine', 'ejs');
+app.use(express.urlencoded({ extended: true }));
+
 app.use(`/`, homePageRouter);
 app.use(`/challenge`, challengeRouter);
 app.use(`/paper`, paperRouter);

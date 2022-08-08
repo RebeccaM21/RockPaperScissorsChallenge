@@ -5,13 +5,14 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-  "start": "node app.js",
-  "test": "NODE_ENV=test mocha --reporter spec"
+    "test": "NODE_ENV=dev mocha --reporter spec",
+    "start": "NODE_ENV=dev nodemon src/app.js"
   },
   "author": "dearshrewdwit",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
     "express": "^4.18.1"
   }
 }
