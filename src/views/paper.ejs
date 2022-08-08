@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+</head>
+
+<body>
+    <h1>
+        <%= `${firstPlayer.name})` %> chose option: Paper
+
+            <%= `${secondPlayer.name})` %> chose option: <%= `${secondPlayer.choice})` %>
+
+                    <%= `${firstPlayer.name} : (${firstPlayer.score})` %>
+
+                        <%= `${secondPlayer.name} : (${secondPlayer.score})` %>
+    </h1>
+    <a id="paper-link" href="/paper">next turn</a>
+</body>
+
+</html>

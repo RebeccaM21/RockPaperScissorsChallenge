@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+</head>
+
+<body>
+    <h1>Current Player: <%= name %>!</h1>
+    <h1>Your score is: <%= score %>!</h1>
+
+    <form action="/rock" method="post">
+        <input id="submit-button" type="submit" value="Rock">
+    </form>
+    <form action="/paper" method="post">
+        <input id="submit-button" type="submit" value="Paper">
+    </form>
+    <form action="/scissors" method="post">
+        <input id="submit-button" type="submit" value="Scissors">
+    </form>
+</body>
+
+</html>
