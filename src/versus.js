@@ -13,10 +13,6 @@ export default class Versus {
         return this.players[1];
     }
 
-    switchPlayer() {
-        this.players.reverse();
-    }
-
     turn() {
         this.secondPlayer().choice();
     }

@@ -13,7 +13,7 @@ router.post('/', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-    const player = req.app.locals.versus.firstPlayer()
+    const player = req.app.locals.versus.firstPlayer();
     
     res.render('challenge', {
         name: player.name,

@@ -1,13 +1,13 @@
 export class Player {
     score = 0; 
 
-  constructor(name) {
-      this.name = name;
-    //   this.score = score; 
+  constructor(name = 'Computer') {
+      this.name = name; 
   }
-
-  score(amount) {
-    this.score += amount;
+ 
+    score(amount){
+        this.score += amount;
+        return this.score; 
   }
     
     choice() { 
@@ -24,4 +24,4 @@ export class Player {
                 break; 
         }
   }
-}; 
+};
